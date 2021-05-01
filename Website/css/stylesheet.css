@@ -51,3 +51,30 @@ nav .navbar-brand:hover {
     color: #47B7C4;
 }
 
+.container-fluid #imagecontainer {
+    box-shadow: 1px 1px 8px #000;
+    border-radius: 3px;
+}
+
+.container-fluid #imagecontainer img {
+    height: 100%;
+    width: 253px;
+    border-radius: 3px;
+    margin-left: -15px;
+}
+
+.container-fluid #imagecontainer img:hover {
+    height: 100%;
+    width: 255px;
+    border: 1px solid #47B7C4;
+}
+
+.container-fluid #newsContainer {
+    background: #fff;
+    box-shadow: 1px 1px 8px #000;
+    border-radius: 3px;
+}
+
+.container-fluid #newsContainer:hover {
+    border: 1px solid #47B7C4;
+}
