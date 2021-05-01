@@ -43,9 +43,9 @@
      <!-- Navbar End -->
 
 
-      <!-- Main Content Start -->
+      <!--- Main Content Start --->
   
-     <div class="container-fluid">
+     <div class="container-fluid" id="mainContent">
 
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -59,28 +59,29 @@
                     </div>
                     <div class="modal-body mx-3">
                         <div class="md-form">
-                            <label data-error="wrong" data-success="right" for="form32">Subject</label>
-                            <input type="text" id="form32" class="form-control validate" required> 
+                            <label data-error="wrong" data-success="right" for="subjectInput">Heading</label>
+                            <input type="text" id="HeadingInput" class="form-control validate" required> 
 
                         </div>
 
 
                         <div class="md-form">
-                            <label data-error="wrong" data-success="right" for="form8">Body</label>
-                            <textarea type="text" id="form8" class="md-textarea form-control" rows="4"></textarea>
+                            <label data-error="wrong" data-success="right" for="bodyInput">Body</label>
+                            <textarea type="text" id="bodyInput" class="md-textarea form-control" rows="4"></textarea>
 
                         </div>
 
                         <div class="md-form">
-                            <label for="exampleFormControlFile1">Upload Image</label>
-                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                            <label for="fileUploader">Upload Image</label>
+                            <input type="file" class="form-control-file" id="fileUploader">
+                            <p id="ImageToUpload"></p>
 
                         </div>
 
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Post</button>
+                        <button type="button" onclick="NewPost()" class="btn btn-primary"  data-dismiss="modal">Post</button>
                     </div>
                 </div>
             </div>
@@ -115,7 +116,7 @@
 
         <div class="row" style="margin-top: 25px; ">
             <div class="offset-sm-1 col-sm-2" style="background: #245677;" id="imagecontainer">
-                <img class="mh-100" src="images/austin-distel-VwsuhJ9uee4-unsplash.jpg" alt="No Image">
+                <img src="images/austin-distel-VwsuhJ9uee4-unsplash.jpg" alt="No Image">
             </div>
             <div class="col-sm-8" id="newsContainer">
                 <h5 class="text-center" style="margin-top: 3px;">NEWS LETTER HEADING</h5>
@@ -138,6 +139,42 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script>
+        function NewPost(){
+
+            const strHeading =document.getElementById('HeadingInput').value ; // get the heading
+            const strBody =document.getElementById('bodyInput').value ; // get the bodycontent
+          
+            var x = document.getElementById("fileUploader"); // get the image uploaded
+            var imgSelected = "";
+            if ('files' in x) {
+                    var file = x.files[0];
+                    if ('name' in file) {
+                        imgSelected +=  file.name ;
+                    }      
+            } 
+
+            const div = document.createElement('div'); // create a container for the new post
+            div.className = 'row';
+            div.style = 'margin-top: 25px;';
+
+            div.innerHTML = `
+            <div class="offset-sm-1 col-sm-2" style="background: #245677;" id="imagecontainer">
+                <img src="images/`+ imgSelected+`" alt="No Image">
+            </div>
+
+            <div class="col-sm-8" id="newsContainer">
+                <h5 class="text-center" style="margin-top: 3px;">  ` + strHeading + `</h5>
+                <p style="margin-top: 10px;"> ` +strBody +` </p>
+               
+            </div>
+             `;
+
+            document.getElementById('mainContent').appendChild(div); // display the new post in browser
+
+        }
+    </script>
 </body>
 
 </html>
