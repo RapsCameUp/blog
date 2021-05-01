@@ -1,0 +1,53 @@
+nav {
+    background: #245677;
+    color: #CBC6C6;
+}
+
+#navBarResponsive li a {
+    color: #CBC6C6;
+    font-size: 18px;
+}
+
+#navBarResponsive li a:hover {
+    color: #47B7C4;
+    border-bottom: 3px solid #47B7C4;
+}
+
+nav .navbar-brand {
+    font-weight: bold;
+    color: #CBC6C6;
+}
+
+nav .navbar-brand:hover {
+    color: #47B7C4;
+    border-bottom: 3px solid #47B7C4;
+}
+
+.container-fluid .topHearder {
+    color: #CBC6C6;
+}
+
+.container-fluid .subscribeInputBox {
+    margin-left: -20px;
+    width: 265px;
+    margin-top: 8px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 1px 1px 18px #1c1d1d;
+}
+
+.container-fluid .btnSubcribe {
+    border-radius: 5px;
+    width: 120px;
+    background: #47B7C4;
+    color: rgb(49, 43, 43);
+    font-weight: 600;
+    border: none;
+    box-shadow: 1px 1px 18px #1c1d1d;
+}
+
+.container-fluid .btnSubcribe:hover {
+    background: #CBC6C6;
+    color: #47B7C4;
+}
+
