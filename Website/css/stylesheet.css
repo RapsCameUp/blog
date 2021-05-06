@@ -78,3 +78,17 @@ nav .navbar-brand:hover {
 .container-fluid #newsContainer:hover {
     border: 1px solid #47B7C4;
 }
+
+.container-fluid #imgContainer img {
+    height: 100%;
+    width: 350px;
+    border-radius: 3px;
+    margin-left: -15px;
+}
+
+.container-fluid #feedbackContainer{
+    margin-top: 15px;
+    box-shadow: 1px 1px 8px #000;
+    background: #245677;
+    
+}
