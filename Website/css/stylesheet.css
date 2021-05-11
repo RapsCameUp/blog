@@ -86,9 +86,13 @@ nav .navbar-brand:hover {
     margin-left: -15px;
 }
 
-.container-fluid #feedbackContainer{
+.container-fluid #feedbackContainer {
     margin-top: 15px;
     box-shadow: 1px 1px 8px #000;
     background: #245677;
-    
+}
+
+.container-fluid #socialIconsContainer a {
+    margin-bottom: 25px;
+    margin-top: 10px;
 }
